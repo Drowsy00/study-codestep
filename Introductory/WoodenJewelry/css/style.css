@@ -1,0 +1,271 @@
+@charset "UTF-8";
+
+html {
+  font-size: 100%;
+}
+body {
+  color: #2d2d2d;
+  font-family: "Crimson Text", serif;
+}
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+  border-radius: 30px;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: #2d2d2d;
+  text-decoration: none;
+}
+
+/* mainとfooterのコンテンツ幅を設定 */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 18px;
+}
+.site-title {
+  width: 110px;
+  line-height: 1px;
+  margin-right: 50px;
+}
+.site-title a {
+  display: block;
+}
+.section-title {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-bottom: 4px;
+}
+/*
+spanタグを使用しているため、「display: inline-block;」を設定することで、
+改行されてmargin-bottomが使用できるようになる
+※pタグを使用してもよいが、文章ではないため今回はspanタグを選択
+*/
+.section-title-en {
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+/*-------------------------------------------
+Mainvisual
+-------------------------------------------*/
+/*
+widthをvwで指定することで、画面幅を基準にした横幅になる
+*/
+#mainvisual {
+  width: 90vw;
+  margin: 4% auto 0 auto;
+}
+
+/*-------------------------------------------
+Header
+-------------------------------------------*/
+#header {
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  padding: 32px 0;
+  margin: 0 auto 30px auto;
+}
+#header ul {
+  display: flex;
+}
+#header li {
+  font-size: 0.875rem;
+  margin-right: 30px;
+}
+/*
+最後のliタグには margin-right を設定しない
+*/
+#header li:last-child {
+  margin-right: 0;
+}
+
+/*-------------------------------------------
+Concept、Work
+-------------------------------------------*/
+.content {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+}
+.content .img {
+  width: 50%;
+}
+
+.content img {
+  border-radius: 30px;
+}
+
+.content .text {
+  width: 50%;
+  padding: 0 7%;
+}
+
+/*-------------------------------------------
+form
+-------------------------------------------*/
+.section-title-contact {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.cp_iptxt {
+  width: 75%;
+  align-items: center;
+  margin: auto;
+}
+.cp_iptxt input[type="text"] {
+  font: 15px/24px sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.3em;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  color: #aaaaaa;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background: transparent;
+  margin: auto;
+  margin-bottom: 50px;
+}
+.ef input[type="text"]:focus {
+  border-bottom: 2px solid #be9a9b;
+  outline: none;
+}
+
+.c-form-textarea {
+  display: block;
+  width: 100%;
+  font: 15px/24px sans-serif;
+  height: 200px;
+  padding: 4px 16px;
+  color: #aaaaaa;
+  transition: 0.3s;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0 0 0 2px #ccc inset;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  resize: vertical;
+  margin-bottom: 50px;
+}
+
+.c-form-textarea:focus {
+  outline: 2px;
+  box-shadow: 0 0 0 2px #be9a9b inset;
+}
+
+.button001 {
+  width: 280px;
+  display: block;
+  margin: auto;
+}
+.button001 a {
+  background: #eee;
+  border-radius: 3px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 280px;
+  padding: 10px 25px;
+  color: #313131;
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+  margin-bottom: 100px;
+}
+.button001 a:hover {
+  background: #be9a9b;
+  color: #fff;
+}
+.button001 a:after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-top: 3px solid #313131;
+  border-right: 3px solid #313131;
+  transform: rotate(45deg) translateY(-50%);
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  border-radius: 1px;
+  transition: 0.3s ease-in-out;
+}
+.button001 a:hover:after {
+  border-color: #fff;
+}
+/*-------------------------------------------
+Footer
+-------------------------------------------*/
+#footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  padding: 20px 0;
+}
+#footer .logo {
+  width: 110px;
+}
+
+/*-------------------------------------------
+SP
+-------------------------------------------*/
+@media screen and (max-width: 767px) {
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  /*-------------------------------------------
+  Mainvisual
+  -------------------------------------------*/
+  #mainvisual {
+    width: 100%;
+    margin: 0;
+  }
+  /*
+  heightをvhで指定することで、画面の高さを基準にした高さになる
+  */
+  #mainvisual img {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+  }
+
+  /*-------------------------------------------
+  Header
+  -------------------------------------------*/
+  #header {
+    width: 100%;
+    padding: 20px 18px;
+  }
+
+  /*-------------------------------------------
+  Concept、Work
+  -------------------------------------------*/
+  /*
+  Workはそのまま画像とテキストを縦に並べると、
+  テキスト→画像の順番になるため、「flex-direction: column-reverse;」
+  で逆順にする
+  */
+  #work {
+    flex-direction: column-reverse;
+  }
+  .content {
+    flex-direction: column;
+  }
+  .content .img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .content .text {
+    width: 100%;
+    padding: 0;
+  }
+}
